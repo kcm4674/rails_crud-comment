@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post_show = Post.find(params[:id]) # 내가 몇 번 게시글을 열람할 것인가?
   end
 
   def new
