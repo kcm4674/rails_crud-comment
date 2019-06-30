@@ -1,2 +1,8 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h2 align="center">글쓰기</h2>
+<form action="/posts/create" method="post"> <%# 해당 action은 posts_controller의 create 액션을 가리킴으로서, 아래 input 데이터들을 create 액션으로 넘김을 의미. %>
+    <input type="text" name="crud_title" style="margin-top: 30px" placeholder="제목"/><br/>
+    <input type="text" name="crud_content" style="margin-top: 20px; height: 100px;" placeholder="">
+    <input type="submit" value="글 쓰기" style="margin-top: 30px;"/>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%# ↑ Post 메소드로 데이터를 넘길 시 위 토큰이 반드시 필요함. (없으면 에러 발생) %>
+</form>

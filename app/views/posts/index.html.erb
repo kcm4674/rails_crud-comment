@@ -1,2 +1,9 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h2 align="center">자유게시판</h2>
+<% @posts.each do |t| %>
+    <a href="/posts/show/<%= t.id %>">
+        <%= t.title %> /
+        <%= t.content %>
+    </a>
+    <hr/>
+<% end %>
+<div align="right"><a href="/posts/new">[글 쓰기]</a></div>
