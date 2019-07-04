@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'posts/new'
   get 'posts/edit/:id' => "posts#edit"
   post 'posts/create' # new.html.erb에서 post 메소드로 데이터를 전달 받으므로, 따로 post라고 설정을 해줘야 합니다.
-  get 'posts/update'
+  post 'posts/update/:id' => "posts#update"
   get 'posts/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -28,6 +28,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post_edit = Post.find(params[:id])
+    @post_edit.title = params[:crud_title]
+    @post_edit.content = params[:crud_content]
+    @post_edit.save
+
+    redirect_to "/posts/index"
   end
 
   def destroy
