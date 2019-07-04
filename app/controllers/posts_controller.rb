@@ -37,5 +37,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post_d = Post.find(params[:id])
+    @post_d.delete
+    redirect_to "/posts/index"
   end
 end
