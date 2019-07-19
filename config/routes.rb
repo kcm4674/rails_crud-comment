@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-  get 'comments/destroy'
   root 'posts#index' # 주의 : controller(posts)와 view(index) 사이 구분은 #로 표기 (/로 하면 안됩니다!)
+  
+  # Post 모델 URI에 Comment URI 경로를 중첩설정
+  resources :posts do
+    resources :comments
+  end
   
   get 'posts/index'
   #          controller 이름 ↓     ↓ controller 내 액션 이름
