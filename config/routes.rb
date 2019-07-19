@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index' # 주의 : controller(posts)와 view(index) 사이 구분은 #로 표기 (/로 하면 안됩니다!)
   
-  # Post 모델 URI에 Comment URI 경로를 중첩설정
+  # Post 모델 URI에 Comment URI 경로를 중첩설정 (경로 중첩을 통해 post_id와 comment_id를 둘 다 알아낼 수 있게 함.) 
   resources :posts do
     resources :comments
   end
