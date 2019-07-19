@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
   root 'posts#index' # 주의 : controller(posts)와 view(index) 사이 구분은 #로 표기 (/로 하면 안됩니다!)
   
   get 'posts/index'
